@@ -1,0 +1,200 @@
+/* modal */
+:root {
+  --modal_bg: white;
+  --modal_color: #333f48;
+  --modal-base-font-size: 24px;
+  --modal-base-font-lh: 32px;
+  --modal-btn-font-size: 20px;
+}
+
+
+.quantum-modal {
+  color: var(--modal_color);
+  font-size: var(--modal-base-font-size);
+  line-height: var(--modal-base-font-lh);
+  letter-spacing: 0;
+  text-align: left;
+  text-indent: 0;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  -webkit-transition: opacity .2s, visibility 0s .2s;
+  transition: opacity .2s, visibility 0s .2s;
+  visibility: hidden;
+  z-index: 500;
+}
+
+.quantum-modal,
+.quantum-modal:before,
+.quantum-modal:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+.quantum-modal {
+  color: inherit;
+  background: #333f48cc;
+}
+
+.quantum-modal.quantum-modal--visible {
+  opacity: 1;
+  transition: opacity .4s, visibility 0s;
+  visibility: visible;
+  overflow-y: scroll;
+}
+
+.quantum-modal__dialog {
+  color: var(--modal_color);
+  font-size: var(--modal-base-font-size);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  position: relative;
+  text-align: center;
+  background: var(--modal_bg);
+  padding: 30px;
+  max-width: max-content;
+  width: calc(100% - 4rem);
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 0.3rem;
+  align-content: center;
+}
+
+button.quantum-modal__close svg {
+  display: none;
+}
+
+button.quantum-modal__close {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+}
+
+.modal-content {
+  border: 0;
+}
+
+button.quantum-modal__close::before,
+button.quantum-modal__close::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: #000;
+  /* Color of the "X" */
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+}
+
+button.quantum-modal__close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+button.quantum-modal__close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.quantum-model__content{
+  position: relative;
+}
+
+.quantum-modal__dialog p {
+  font-size: var(--modal-base-font-size);
+  line-height: var(--modal-base-line-height);
+  font-weight: normal;
+  text-align: left;
+  margin: 0;
+}
+
+.modal-actions {
+  display: flex;
+  margin-top: 35px;
+  gap: 15px;
+  width: 100%;
+  flex-direction: column;
+}
+
+.modal-actions a {
+  max-width: 100%;
+  height: auto;
+  width: -webkit-fill-available;
+  display: inline-block;
+  background: #823f98;
+  font-weight: normal;
+  border: 0;
+  font-size: 20px;
+  line-height: 24px;
+  padding: 15px;
+  color: white;
+  border-radius: 8px;
+  opacity: 1;
+  cursor: pointer;
+  text-align: center;
+}
+
+
+.modal-actions a:hover {
+  text-decoration: none;
+}
+
+.quantum-modal__dialog h2 {
+  padding-bottom: 40px;
+  color: #823f98;
+  margin-bottom: 0;
+  font-size: 32px;
+  line-height: 34px;
+  letter-spacing: .32px;
+}
+
+@media (max-width: 767px) {
+  .quantum-modal__dialog {
+    padding: 30px 14px;
+    width: 91%;
+  }
+
+  .quantum-modal__dialog p {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .modal-actions {
+    display: flex;
+    margin-top: 20px;
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .quantum-modal__dialog {
+    padding: 30px 16px;
+  }
+
+  .modal-actions {
+    max-width: 97%;
+  }
+}
